@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+   
+    <script
+    src="https://kit.fontawesome.com/64d58efce2.js"
+    crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="/style.css">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Information</title>
+<style>
+.user-info {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin: 20px auto;
+  width: 300px;
+  border: 2px solid black; /* Added black border */
+  border-radius: 8px;
+  text-align: center; /* Centered text */
+}
+
+.user-info div {
+  margin-bottom: 10px;
+}
+
+.user-info label {
+  font-weight: bold;
+  color: #333; /* Darker text for better readability */
+}
+
+.user-info span {
+  display: inline-block; /* Aligns with the label */
+  margin-left: 10px;
+  color: #555; /* Slightly lighter text for contrast */
+}
+
+/* Additional styling for a modern look */
+.user-info {
+  box-shadow: none; /* Removed box shadow */
+  transition: transform 0.3s ease-in-out; /* Smooth transformation on hover */
+}
+
+.user-info:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  background-color: #e8e8e8; /* Lighter background on hover */
+}
+
+</style>
+</head>
+<body>
+    <header class="bg-lime-300 ">
+        <nav class="flex justify-between items-center w-[92%]   mx-auto">
+            <div>
+                <img class="w-12 cursor-pointer  rounded-2xl	pt-1 pb-1	" src="images/header1.png"
+                    alt="...">
+            </div>
+            <div
+                class="nav-links duration-500 md:static absolute bg-lime-300 md:min-h-fit min-h-[60vh] left-0 right-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
+                <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw]  gap-8">
+                    <li>
+                        <a class="hover:text-gray-500" href="/index">Home</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="/index5">Service</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#pricing">Pricing</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex items-center gap-6">
+         
+              <a href="/logout" class="bg-[#0d51c6] text-white px-5 py-2 rounded-full hover:bg-[#041532]">
+                logout
+              </a>
+              <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden"></ion-icon>
+            </div>
+            
+    </header>
+<div class="user-info">
+  <div>
+    <label>Name:</label>
+    <span id="name"><%= name %></span>
+  </div>
+  <div>
+    <label>Email:</label>
+    <span id="email"><%= email %></span>
+  </div>
+  <div>
+    <label>Phone Number:</label>
+    <span id="phone_number"><%= phone_number %></span>
+  </div>
+  <div>
+    <label>Gender:</label>
+    <span id="gender"><%= gender %></span>
+  </div>
+  <div>
+    <label>Year of Birth:</label>
+    <span id="yob"><%= your_date_column %></span>
+  </div>
+</div>
+</body>
+<script>
+  const your_date_column = strftime('%Y-%m-%d')
+</script>
+</html>
